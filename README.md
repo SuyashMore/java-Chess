@@ -1,0 +1,3 @@
+# jxChess
+
+Java Mini-Project 
