@@ -8,7 +8,7 @@ public class gameBoard {
 	//	Rook,Knight,Bishop,Queen,King,Pawn
 	private final char[] BlackChessPieces = {'R','N','B','Q','K','B','N','R','P'};
 	private final char[] WhiteChessPieces = {'r','n','b','q','k','b','n','r','p'};
-	private final char EMPTY_SPACE = '.';
+	public final char EMPTY_SPACE = '.';
 	
 	
 //Function Declarations
@@ -48,6 +48,67 @@ public class gameBoard {
 		Board[toY][toX] = Board[fromY][fromX];
 		Board[fromY][fromX]=EMPTY_SPACE;
 		
+	}
+	
+	public char getElementAt(int x,int y)
+	{
+		return Board[y][x];
+	}
+	
+	public boolean isElementBlack(char in)
+	{
+		char current = in;
+		for(int i=0;i<=8;i++)
+		{
+			if(current ==BlackChessPieces[i])
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public int getIdOf(char in)
+	{
+		boolean isBlack = isElementBlack(in);
+		if(isBlack)
+		{
+			switch(in)
+			{
+			case 'P':
+				return 0;
+			case 'R':
+				return 1;
+			case 'N':
+				return 2;
+			case 'B':
+				return 3;
+			case 'Q':
+				return 4;
+			case 'K':
+				return 5;
+			}
+		}
+		else
+		{
+			switch(in)
+			{
+			case 'p':
+				return 0;
+			case 'r':
+				return 1;
+			case 'n':
+				return 2;
+			case 'b':
+				return 3;
+			case 'q':
+				return 4;
+			case 'k':
+				return 5;
+			}
+			
+		}
+		return 0;
 	}
 	
 	public void printDebug()	//Prints the Entire Board For Debugging Purposes
