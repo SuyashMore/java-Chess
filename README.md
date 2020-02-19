@@ -1,3 +1,3 @@
-# jxChess
+# Java Chess
 
-Java Mini-Project 
+Made as a Part of "Object Oriented Programming" mini-project (Semester III)
